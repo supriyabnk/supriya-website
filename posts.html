@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Posts | Supriya Dutta</title>
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="posts">
+<div id="progress"></div><div id="glow"></div><canvas id="bg3d"></canvas>
+<header class="nav"><div class="container nav-in">
+  <a href="index.html" class="brand"><img src="images/logo.svg" alt="SD logo"><div>Supriya Dutta<small>Banker</small></div></a>
+  <nav><ul id="menu">
+    <li><a class="link" href="index.html">Home</a></li><li><a class="link" href="about.html">About</a></li>
+    <li><a class="link" href="career.html">Career</a></li><li><a class="link" href="personal.html">Personal Details</a></li>
+    <li><a class="link" href="posts.html">Posts</a></li>
+    <li><a class="link" href="contact.html">Contact</a></li><li><button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☀️</button></li>
+  </ul></nav>
+  <button class="icon-btn burger" id="burger" aria-label="Menu">☰</button>
+</div></header>
+
+<main>
+<div class="page-hero container reveal"><span class="eyebrow">📝 Posts</span><h1>My <span class="grad-text">Posts</span></h1><p>Thoughts, updates and articles I share from time to time.</p></div>
+
+<section style="padding-top:30px"><div class="container">
+  <div class="post-tools reveal">
+    <div class="post-search"><input type="search" id="postSearch" placeholder="Search posts…" aria-label="Search posts" autocomplete="off"></div>
+    <div class="post-cats" id="postCats" role="group" aria-label="Filter by category"></div>
+  </div>
+  <div class="post-grid" id="postGrid" aria-live="polite"><div class="post-state">Loading posts…</div></div>
+  <div class="post-more"><button class="btn ghost" id="postMore" hidden>Load more</button></div>
+</div></section>
+</main>
+
+<footer><div class="container foot"><div>© <span data-year></span> Supriya Dutta. All rights reserved.</div>
+<div class="socials"><a href="mailto:supriyaduttadbg@proton.me">✉️</a><a href="contact.html">💬</a></div></div></footer>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/three-bg.js"></script><script src="js/main.js"></script>
+<script src="js/config.js"></script>
+<script src="js/posts.js"></script>
+</body>
+</html>

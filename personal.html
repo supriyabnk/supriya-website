@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Personal Details | Supriya Dutta</title>
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="progress"></div><div id="glow"></div><canvas id="bg3d"></canvas>
+<header class="nav"><div class="container nav-in">
+  <a href="index.html" class="brand"><img src="images/logo.svg" alt="SD logo"><div>Supriya Dutta<small>Banker</small></div></a>
+  <nav><ul id="menu">
+    <li><a class="link" href="index.html">Home</a></li><li><a class="link" href="about.html">About</a></li>
+    <li><a class="link" href="career.html">Career</a></li><li><a class="link" href="personal.html">Personal Details</a></li>
+    <li><a class="link" href="posts.html">Posts</a></li>
+    <li><a class="link" href="contact.html">Contact</a></li><li><button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☀️</button></li>
+  </ul></nav>
+  <button class="icon-btn burger" id="burger" aria-label="Menu">☰</button>
+</div></header>
+
+<main>
+<div class="page-hero container reveal"><span class="eyebrow">Personal Details</span><h1>Personal <span class="grad-text">Profile</span></h1><p>Basic personal information, family and background.</p></div>
+
+<section id="basic"><div class="container"><div class="card pers reveal" data-tilt="4">
+  <div class="badge3d"><div class="coin photo"><img src="images/supriya-face.jpg" alt="Supriya Dutta"></div></div>
+  <div>
+    <h3>Basic Information</h3>
+    <div class="kv"><span>Name</span><span>Supriya Dutta</span></div>
+    <div class="kv"><span>Date of Birth</span><span>21 March 1993 (<span data-age></span> years)</span></div>
+    <div class="kv"><span>City of Birth</span><span>Darbhanga, Bihar, India</span></div>
+    <div class="kv"><span>Home</span><span>Ahila, Darbhanga, Bihar</span></div>
+    <div class="kv"><span>Qualification</span><span>M. Com.</span></div>
+    <div class="kv"><span>Profession</span><span>Banker — Scale-I Officer, Bihar Gramin Bank</span></div>
+  </div>
+</div></div></section>
+
+<section id="marital" style="padding-top:20px"><div class="container"><div class="card pers reveal" data-tilt="4">
+  <div class="badge3d"><div class="coin">💍</div></div>
+  <div><h3>Marital Status</h3><div class="val">Unmarried</div><p>Currently single and focused on a growing career in banking.</p></div>
+</div></div></section>
+
+<section id="family" style="padding-top:20px"><div class="container">
+  <div class="sec-head reveal"><span class="tag">Family</span><h2>My <span class="grad-text">Family</span></h2><div class="bar"></div></div>
+  <div class="grid g2">
+    <div class="card pers reveal" data-tilt="6" style="grid-template-columns:1fr">
+      <div class="badge3d"><div class="coin">👨‍⚕️</div></div>
+      <div style="text-align:center"><h3>Father's Name</h3><div class="val">Dr. R. K. Dutta</div><p>Former Lecturer of Ayurveda</p></div>
+    </div>
+    <div class="card pers reveal" data-tilt="6" style="grid-template-columns:1fr">
+      <div class="badge3d"><div class="coin">👩</div></div>
+      <div style="text-align:center"><h3>Mother's Name</h3><div class="val">Mrs. Nandita Dutta</div><p>The heart and strength of our family.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="nationality" style="padding-top:20px"><div class="container"><div class="card pers reveal" data-tilt="4">
+  <div class="badge3d"><div class="coin">🇮🇳</div></div>
+  <div><h3>Nationality</h3><div class="val">Indian</div><p>Proud citizen of India, born and raised in Bihar.</p></div>
+</div></div></section>
+</main>
+
+<footer><div class="container foot"><div>© <span data-year></span> Supriya Dutta. All rights reserved.</div>
+<div class="socials"><a href="mailto:supriyaduttadbg@proton.me">✉️</a><a href="contact.html">💬</a></div></div></footer>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/three-bg.js"></script><script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact | Supriya Dutta</title>
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="progress"></div><div id="glow"></div><canvas id="bg3d"></canvas>
+<header class="nav"><div class="container nav-in">
+  <a href="index.html" class="brand"><img src="images/logo.svg" alt="SD logo"><div>Supriya Dutta<small>Banker</small></div></a>
+  <nav><ul id="menu">
+    <li><a class="link" href="index.html">Home</a></li><li><a class="link" href="about.html">About</a></li>
+    <li><a class="link" href="career.html">Career</a></li><li><a class="link" href="personal.html">Personal Details</a></li>
+    <li><a class="link" href="posts.html">Posts</a></li>
+    <li><a class="link" href="contact.html">Contact</a></li><li><button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☀️</button></li>
+  </ul></nav>
+  <button class="icon-btn burger" id="burger" aria-label="Menu">☰</button>
+</div></header>
+
+<main>
+<div class="page-hero container reveal"><span class="eyebrow">Contact Us</span><h1>Let's <span class="grad-text">Connect</span></h1><p>Have a question or want to say hello? Reach out using the details below or send a message.</p></div>
+
+<section style="padding-top:40px"><div class="container">
+<div class="contact-grid">
+  <div class="card reveal" data-tilt="4">
+    <h3 style="margin-bottom:10px">Contact Details</h3>
+    <div class="info-row"><div class="ic">👤</div><div><small>Name</small>Supriya Dutta</div></div>
+    <div class="info-row"><div class="ic">📍</div><div><small>Address</small>Ahila, Darbhanga, Bihar</div></div>
+    <div class="info-row"><div class="ic">✉️</div><div><small>Email</small><a href="mailto:supriyaduttadbg@proton.me">supriyaduttadbg@proton.me</a></div></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px">
+      <a class="btn primary" href="mailto:supriyaduttadbg@proton.me">✉️ Email</a>
+    </div>
+  </div>
+
+  <div class="card reveal">
+    <h3 style="margin-bottom:20px">Send Me a Message</h3>
+    <form id="contactForm" novalidate>
+      <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+      <div class="f2c">
+        <div class="field"><input type="text" id="name" name="name" placeholder=" " required><label for="name">Your Name</label></div>
+        <div class="field"><input type="tel" id="phone" name="phone" placeholder=" "><label for="phone">Phone (optional)</label></div>
+      </div>
+      <div class="field"><input type="email" id="email" name="email" placeholder=" " required><label for="email">Your Email</label></div>
+      <div class="field"><input type="text" id="subject" name="subject" placeholder=" " required><label for="subject">Subject</label></div>
+      <div class="field"><textarea id="message" name="message" placeholder=" " maxlength="1000" required></textarea><label for="message">Your Message</label></div>
+      <div class="counter" id="cnt">0 / 1000</div>
+      <button class="btn primary" id="sendBtn" type="submit">Send Message ✈</button>
+      <div class="status" id="status" role="status"></div>
+    </form>
+  </div>
+</div>
+
+</div></section>
+</main>
+
+<footer><div class="container foot"><div>© <span data-year></span> Supriya Dutta. All rights reserved.</div>
+<div class="socials"><a href="mailto:supriyaduttadbg@proton.me">✉️</a><a href="contact.html">💬</a></div></div></footer>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/three-bg.js"></script><script src="js/main.js"></script>
+</body>
+</html>
