@@ -1,11 +1,13 @@
 /* ===== Supriya Dutta — Portfolio ===== */
 :root{
+  --glass:rgba(12,18,34,.58);
   --bg:#070b16; --bg2:#0d1424; --card:rgba(255,255,255,.05); --card-b:rgba(255,255,255,.10);
   --text:#e8edf7; --muted:#9aa7bf; --a1:#2dd4bf; --a2:#6366f1; --gold:#f5b942;
   --grad:linear-gradient(135deg,var(--a1),var(--a2)); --shadow:0 20px 50px rgba(0,0,0,.45);
   --nav:rgba(7,11,22,.65);
 }
 [data-theme="light"]{
+  --glass:rgba(255,255,255,.62);
   --bg:#f3f6fc; --bg2:#e7edf8; --card:rgba(255,255,255,.75); --card-b:rgba(20,30,60,.10);
   --text:#14203a; --muted:#56637d; --shadow:0 20px 40px rgba(40,60,110,.15); --nav:rgba(243,246,252,.75);
 }
@@ -314,3 +316,54 @@ a,button,input,textarea,.tab,.acc-q{touch-action:manipulation}
 .post-content figure[style*="width"] img,.post-content figure[style*="width"] video{width:100%}
 
 @media(max-width:600px){.post-content table{display:block;overflow-x:auto}}
+
+/* ===== Posts: professional cards without a cover, natural-size images, gallery ===== */
+.post-card.no-cover::before{content:"";display:block;height:5px;background:var(--grad)}
+.post-card.no-cover .post-body-sm{padding-top:24px}
+.post-card.no-cover .post-body-sm h3{font-size:1.4rem}
+.post-card.no-cover .post-body-sm p{-webkit-line-clamp:5}
+.post-content figure{margin:1.8em auto;text-align:center}
+.post-content figure.align-left{text-align:left}.post-content figure.align-right{text-align:right}
+.post-content img{display:block;margin-inline:auto;width:auto;height:auto;max-width:min(100%,560px);max-height:min(70vh,460px);object-fit:contain;border-radius:14px;box-shadow:var(--shadow);cursor:zoom-in;transition:transform .3s,box-shadow .3s}
+.post-content img:hover{transform:scale(1.015)}
+.post-content img:focus-visible{outline:3px solid var(--a1);outline-offset:4px}
+.post-content figure[style*="width"] img{width:100%;max-width:100%}
+.post-content figure.align-left img,.post-content figure.align-right img{margin-inline:0}
+.post-content figure.align-left{margin:.3em 1.6em 1em 0}.post-content figure.align-right{margin:.3em 0 1em 1.6em}
+
+
+/* make sure the HTML 'hidden' attribute always wins (e.g. the Load more button) */
+[hidden]{display:none!important}
+
+/* ===== footer always sits at the bottom, even on short pages ===== */
+body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
+main{flex:1 0 auto;width:100%}
+footer{margin-top:40px}
+
+/* ===== an opened post sits on a frosted-glass panel (the background behind it is softly blurred) ===== */
+.post-wrap{max-width:860px;margin:104px auto 24px;padding:44px clamp(20px,5vw,60px) 40px;border-radius:28px;background:var(--glass);border:1px solid var(--card-b);
+  box-shadow:var(--shadow);-webkit-backdrop-filter:blur(14px) saturate(1.15);backdrop-filter:blur(14px) saturate(1.15)}
+.post-wrap .post-state{border:0;padding:40px 10px}
+@media(max-width:600px){.post-wrap{margin:88px auto 16px;padding:28px 18px 26px;border-radius:22px;width:94%}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.post-wrap{background:var(--bg2)}}
+
+/* ===== photo viewer (fit to screen + zoom) ===== */
+.lb{position:fixed;inset:0;z-index:300;background:rgba(3,6,14,.78);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);animation:lbin .2s}
+@keyframes lbin{from{opacity:0}}
+.lb-stage{position:absolute;left:0;right:0;top:60px;bottom:64px;overflow:hidden;touch-action:none;z-index:1}
+.lb-stage.zoomed{cursor:grab}.lb-stage.zoomed:active{cursor:grabbing}
+.lb-stage img{position:absolute;left:0;top:0;transform-origin:0 0;max-width:none!important;max-height:none!important;width:auto;height:auto;border-radius:0;box-shadow:0 20px 60px rgba(0,0,0,.6);cursor:inherit;user-select:none;-webkit-user-drag:none;will-change:transform;transition:none}
+.lb-stage img:hover{transform-origin:0 0}
+.lb-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;text-align:center;color:#d6dcea;font-size:.95rem;padding:8px 24px 18px;pointer-events:none}
+.lb-count{position:absolute;top:20px;left:22px;z-index:3;color:#aeb8cf;font-size:.85rem}
+.lb-tools{position:absolute;top:12px;left:50%;transform:translateX(-50%);z-index:3;display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:3px}
+.lb-t{background:none;border:0;color:#fff;min-width:36px;height:34px;border-radius:999px;cursor:pointer;font-size:1.2rem;line-height:1;display:grid;place-items:center;padding:0 8px}.lb-t:hover{background:rgba(255,255,255,.2)}
+.lb-fit{font-size:.78rem;font-weight:500}
+.lb-pct{min-width:46px;text-align:center;font-size:.78rem;color:#d6dcea}
+.lb-close,.lb-nav{position:absolute;z-index:3;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:50%;cursor:pointer;display:grid;place-items:center;transition:background .2s}
+.lb-close:hover,.lb-nav:hover{background:rgba(255,255,255,.24)}
+.lb-close{top:12px;right:16px;width:42px;height:42px;font-size:1.1rem}
+.lb-nav{top:50%;transform:translateY(-50%);width:50px;height:50px;font-size:2rem;line-height:1;padding-bottom:4px}
+.lb-prev{left:14px}.lb-next{right:14px}
+.lb-close:focus-visible,.lb-nav:focus-visible,.lb-t:focus-visible{outline:3px solid var(--a1)}
+@media(max-width:700px){.lb-nav{top:auto;bottom:58px;transform:none;width:44px;height:44px}.lb-count{top:62px;left:14px}.lb-tools{left:12px;transform:none}}

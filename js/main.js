@@ -1,3 +1,5 @@
+/* Visits that start from the Post Studio's "View live" links are never counted in the reader statistics. */
+try { if (/[?&]src=studio\b/.test(location.search)) localStorage.setItem('sd_owner', '1'); } catch (e) { /* storage blocked */ }
 /* Supriya Dutta — interactions */
 (function () {
   const $ = (s, c = document) => c.querySelector(s);
